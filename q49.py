@@ -1,0 +1,20 @@
+# Write a recursive function to flatten a nested list.
+
+def flatten(lst):
+
+    result = []
+
+    for i in lst:
+
+        if isinstance(i, list):
+            result.extend(flatten(i))
+
+        else:
+            result.append(i)
+
+    return result
+
+
+nested_list = [1, [2, 3], [4, [5, 6]], 7]
+
+print("Flattened List:", flatten(nested_list))
